@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     run: nginx-test
-  name: nginx-test-clusterip
+  name: nginx-test-Nodeport
 spec:
   ports:
   - port: 8080
@@ -12,6 +12,6 @@ spec:
     targetPort: 80
   selector:
     run: nginx-test
-  type: ClusterIP
+  type: Nodeport
 status:
   loadBalancer: {}
