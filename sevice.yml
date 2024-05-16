@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    run: nginx-test
+    run: nginx-test-Nodeport
   name: nginx-test-Nodeport
 spec:
   ports:
