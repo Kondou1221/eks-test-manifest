@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    run: nginx_test
-  name: nginx_test
+    run: nginx-test
+  name: nginx-test
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: nginx_test
+      run: nginx-test
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        run: nginx_test
+        run: nginx-test
     spec:
       containers:
       - image: nginx:latest
-        name: nginx_test
+        name: nginx-test
         ports:
         - containerPort: 80
         resources: {}
