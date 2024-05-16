@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    run: nginx-test-Nodeport
-  name: nginx-test-Nodeport
+    run: nginx-test
+  name: nginx-test-nodeport
 spec:
   ports:
   - port: 8080
@@ -12,6 +12,6 @@ spec:
     targetPort: 80
   selector:
     run: nginx-test
-  type: Nodeport
+  type: NodePort
 status:
   loadBalancer: {}
