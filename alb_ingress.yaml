@@ -17,11 +17,11 @@ spec:
   rules:
   - http:
       paths:
-      - path: /hello
+      - path: /
         pathType: Exact
         backend:
           service:
-            name: sample-service
+            name: nginx-test-nodeport
             port:
               number: 80
 
