@@ -1,11 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: external
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+    service.beta.kubernetes.io/aws-load-balancer-healthcheck-protocol: http
+    service.beta.kubernetes.io/aws-load-balancer-healthcheck-path: /health
   labels:
     run: nginx-test
   name: nginx-test-nodeport
-  namespace: yokoso
+  namespace: default
 spec:
   ports:
   - port: 80
@@ -13,6 +18,4 @@ spec:
     targetPort: 80
   selector:
     run: nginx-test
-  type: NodePort
-status:
-  loadBalancer: {}
+  type: LoadBalancer
